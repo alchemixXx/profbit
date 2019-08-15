@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="jumbotron">
+  <div class="container">
+    <div class="header">
+      <a class="message" href="{{ url_for('reports.top') }}">Most popular products</a>
+    </div>
+
+        <div class="header">
+      <a class="message" href="{{ url_for('reports.by_date') }}">Sorted by date</a>
+    </div>
+
+   </div>
+ </div>
+
+{% endblock content %}

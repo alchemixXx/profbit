@@ -1,0 +1,42 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="jumbotron">
+ <div class="container">
+
+      <div class="content-section">
+          <form id='addForm' method="POST" action="" enctype="multipart/form-data">
+              {{ form.hidden_tag() }}
+              <fieldset class="form-group">
+                  <legend class="border-bottom mb-4">{{legend}}</legend>
+
+                  <div class="form-group">
+                      {{ form.orders.label(class="form-control-label") }}
+
+                      {% if form.orders.errors %}
+                          {{ form.orders(class="form-control form-control-lg is-invalid") }}
+                          <div class="invalid-feedback">
+                              {% for error in form.orders.errors %}
+                                  <span>{{ error }}</span>
+                              {% endfor %}
+                          </div>
+                      {% else %}
+                          {{ form.orders(class="form-control form-control-lg") }}
+                      {% endif %}
+                  </div>
+
+              </fieldset>
+              <div class="form-group">
+                  {{ form.submit(class="btn btn-outline-info") }}
+              </div>
+          </form>
+      </div>
+
+  </div>
+</div>
+
+
+
+{% endblock content %}

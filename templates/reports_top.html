@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+<br>
+
+<div class="container">
+  <p>Запросов в БД: {{ request_to_db }}</p>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Имя Товара</th>
+            <th scope="col">Номер заказа</th>
+            <th scope="col">Цена</th>
+            <th scope="col">Дата</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in top_list %}
+            <tr>
+              <td>{{ item.product_name }}</td>
+              <td>{{ item.order_id }}</td>
+              <td>{{ item.product_price }}</td>
+              <td>{{ item.created_date }}</td>
+
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+{% endblock content %}
